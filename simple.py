@@ -11,3 +11,12 @@ haar_face_cascade = cv2.CascadeClassifier(cascade_path)
 photo = cv2.imread(photo_path)
 grayscale = cv2.cvtColor(photo, cv2.COLOR_BGR2grayscale)
 
+
+# Detect faces in the photo using OpenCV library
+faces = haar_face_cascade.detectMultiScale(
+        grayscale,
+        scaleFactor = 1.1,
+        minNeighbors = 5,
+        minSize = (30, 30)
+        )
+
